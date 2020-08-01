@@ -20,7 +20,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="NLog.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   
@@ -28,7 +28,6 @@
     <PackageReference Include="Autofac" Version="4.9.4" />
     <PackageReference Include="CommandLineParser" Version="2.4.3" />
     <PackageReference Include="NLog" Version="4.5.10" />
-    <PackageReference Include="NLog.Config" Version="4.5.10" />
     <PackageReference Include="NLog.Schema" Version="4.5.10" />
   </ItemGroup>
 
