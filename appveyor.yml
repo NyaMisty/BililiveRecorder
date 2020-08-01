@@ -61,7 +61,7 @@ for:
     - path: BililiveRecorder.WPF\bin\Debug
       name: BililiveRecorderDebugBuild
     - path: BililiveRecorder.Cli\bin\Debug
-      name: BililiveRecorderDebugBuild
+      name: BililiveRecorderCliDebugBuild
 
 #on_finish:
 #  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
