@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BililiveRecorder.Cli": {
+      "commandName": "Project",
+      "commandLineArgs": "--help"
+    }
+  }
+}
