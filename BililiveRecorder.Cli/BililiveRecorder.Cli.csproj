@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <RuntimeIdentifiers>win10-x64;osx.10.11-x64;linux-arm64;linux-arm;linux-x64</RuntimeIdentifiers>
+    <RuntimeIdentifiers>win-x64;osx.10.11-x64;linux-arm64;linux-arm;linux-x64</RuntimeIdentifiers>
   </PropertyGroup>
 
   <ItemGroup>
