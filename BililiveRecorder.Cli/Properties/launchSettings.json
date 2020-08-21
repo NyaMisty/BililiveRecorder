@@ -2,7 +2,7 @@
   "profiles": {
     "BililiveRecorder.Cli": {
       "commandName": "Project",
-      "commandLineArgs": "--help"
+      "commandLineArgs": "-i 14047 --cookie 123456"
     }
   }
 }

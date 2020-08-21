@@ -8,6 +8,7 @@ using BililiveRecorder.Core;
 using BililiveRecorder.Core.Config;
 using BililiveRecorder.FlvProcessor;
 using CommandLine;
+using Newtonsoft.Json;
 using NLog;
 
 namespace BililiveRecorder.Cli
@@ -50,6 +51,8 @@ namespace BililiveRecorder.Cli
                 }
             }
             
+            logger.Info("Using config: " + JsonConvert.SerializeObject(option, Formatting.Indented));
+
             logger.Info("开始录播");
             Task.WhenAll(Recorder.Select(x => Task.Run(() => x.Start()))).Wait();
             Console.CancelKeyPress += (sender, e) =>
