@@ -43,6 +43,7 @@ namespace BililiveRecorder.Cli
 
         private static void Run(ConfigV1 option)
         {
+            option.EnabledFeature = EnabledFeature.RecordOnly;
             foreach (var room in option.RoomList)
             {
                 if (Recorder.Where(r => r.RoomId == room.Roomid).Count() == 0)
@@ -51,7 +52,7 @@ namespace BililiveRecorder.Cli
                 }
             }
             
-            logger.Info("Using config: " + JsonConvert.SerializeObject(option, Formatting.Indented));
+            logger.Info("Using workDir: " + option.WorkDirectory + "\n\tconfig: " + JsonConvert.SerializeObject(option, Formatting.Indented));
 
             logger.Info("开始录播");
             Task.WhenAll(Recorder.Select(x => Task.Run(() => x.Start()))).Wait();
