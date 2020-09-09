@@ -25,6 +25,8 @@ environment:
     secure: 9f78dD9jN5vlVZ0zv15kdD4Mj+/+uacfu29bbGC+cBVFs834aFVf5Ci+n3NP3Bl7
   codesignpasswd:
     secure: iKv14aGuHUDEfb5fSIBMuSsu1JnisWXL8wJ7x/2DCNtggWKevjhOFBOrI7c95xBY
+  gh_token:
+    secure: tAYY5TbyhAGws2MxxoIKdE3B+VlCvnyuzmYbylNnZivghfBYMeC22GqIxDfUUmt8
 
 cache:
   - packages
@@ -79,5 +81,6 @@ for:
     - path: BililiveRecorder.Cli\bin\DebugPublish\osx.10.11-x64
       name: BililiveRecorderCliDebug-osx.10.11-x64
 
-#on_finish:
-#  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+on_finish:
+  - cmd: curl -X POST https://api.github.com/repos/NyaMisty/BililiveRecorderDocker/releases -d {\"tag_name\":\"%APPVEYOR_BUILD_VERSION%\"} --user "NyaMisty:%gh_token%"
+  #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
